@@ -1,0 +1,41 @@
+To doapp
+
+setup express server  :  
+mongodb conncetion    :
+
+set the ejs to express view engine:
+
+register page:
+register api:
+
+login page:
+login api:
+
+session base auth:
+middleware to protect apis:
+
+dashboard page:
+logout
+logout from all the devices
+
+backend api:
+create api
+read api
+eidt api
+delete api
+
+
+dashboard clinet
+axos
+axios create
+axios eidt
+axiod delete
+axios read
+
+pagination api
+rate limiting
+
+deploy
+
+
+jwt email auth  sas//\\
