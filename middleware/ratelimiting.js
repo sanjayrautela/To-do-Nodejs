@@ -1,4 +1,4 @@
-const accessModel = require("../models/accessmodel");
+const accessModel = require("../models/accessModel");
 
 const rateLimiting = async (req, res, next) => {
     console.log("rate limit middle ware");

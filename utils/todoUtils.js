@@ -1,6 +1,6 @@
 const todoDataValidation = ({todoText}) => {
     return new Promise((resolve,reject) => {
-        if(!todoText) reject("missing todotext");
+        if(!todoText) reject("missing todo text");
 
         if(typeof todoText !== "string") reject("todo is not a text");
 

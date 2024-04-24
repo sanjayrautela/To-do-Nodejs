@@ -93,7 +93,7 @@ document.addEventListener("click", function (event) {
             })
             .catch((err) => console.log(err));
     } else if (event.target.classList.contains("show_more")) {
-        generateTodos();
+        genrateTodos();
     }
 });
 

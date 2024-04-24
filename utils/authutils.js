@@ -22,7 +22,7 @@ const userDataValidation = ({ name, email, username, password }) => {
     if (username.length < 3 || username.length > 50)
       reject("username length should be 3-50");
 
-    if (!isEmailRgex({ str: email })) reject("Email format is incorect");
+    if (!isEmailRgex({ str: email })) reject("Email format is incorrect");
 
     resolve();
   });
