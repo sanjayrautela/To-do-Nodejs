@@ -16,7 +16,7 @@ const rateLimiting = require("./middleware/rateLimiting");
 
 //constants
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;  
 const store = new mongodbSession({
     uri: process.env.MONGO_URI,
     collection: "sessions",
