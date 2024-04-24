@@ -117,6 +117,8 @@ app.post("/register-user", async (req, res) => {
     }
 });
 
+//register and login m mistake tha
+
 app.get("/login", (req, res) => {
     return res.render("loginPage");
 });
