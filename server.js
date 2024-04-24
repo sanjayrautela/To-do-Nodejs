@@ -202,7 +202,7 @@ app.get("/verifytoken/:token", async(req,res) => {
     });
 });
 
-//grteat
+//all efforts
 
 
 
