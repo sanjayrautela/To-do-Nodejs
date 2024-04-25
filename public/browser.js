@@ -1,7 +1,7 @@
-window.onload = genrateTodos;
+window.onload = generateTodos;
 let skip = 0;
 
-function genrateTodos() {
+function generateTodos() {
     axios
         .get(`/read-item?skip=${skip}`)
         .then((res) => {
@@ -55,9 +55,9 @@ document.addEventListener("click", function (event) {
             .catch((err) => console.log(err));
     } else if (event.target.classList.contains("delete-me")) {
         const todoId = event.target.getAttribute("data-id");
-
+        console.log(todoId);
         axios
-            .post("/delete-item", { todoId })
+            .delete("/delete-item", { data: {todoId: todoId} })
             .then((res) => {
                 if (res.data.status !== 200) {
                     alert(res.data.message);
@@ -93,7 +93,7 @@ document.addEventListener("click", function (event) {
             })
             .catch((err) => console.log(err));
     } else if (event.target.classList.contains("show_more")) {
-        genrateTodos();
+        generateTodos();
     }
 });
 

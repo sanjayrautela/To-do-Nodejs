@@ -22,13 +22,13 @@ const userDataValidation = ({ name, email, username, password }) => {
     if (username.length < 3 || username.length > 50)
       reject("username length should be 3-50");
 
-    if (!isEmailRgex({ str: email })) reject("Email format is incorect");
+    if (!isEmailRgex({ str: email })) reject("Email format is incorrect");
 
     resolve();
   });
 };
 
-const genrateToken = (email) => {
+const generateToken = (email) => {
   const token = jwt.sign(email, process.env.SECRET_KEY);
   return token;
 };
@@ -41,14 +41,14 @@ const sendVerificationMail = (email, verifiedToken) => {
     secure: true,
     service: "gmail",
     auth: {
-      user: "kssinghkaran13@gmail.com",
-      pass: "ddiv iwpc tunq hqep",
+      user: "haribolsanjay2@gmail.com",
+      pass: "xkac fnvq yude mtgl",
     },
   });
 
   //mail options
   const mailOptions = {
-    from: "kssinghkaran@gmail.com",
+    from: "haribolsanjay2@gmail.com",
     to: email,
     subject: "Email verification for TODO App",
     html: `<head>
@@ -132,6 +132,6 @@ const sendVerificationMail = (email, verifiedToken) => {
 module.exports = {
   userDataValidation,
   isEmailRgex,
-  genrateToken,
+  generateToken,
   sendVerificationMail,
 };

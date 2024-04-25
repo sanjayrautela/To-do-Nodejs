@@ -1,48 +1,73 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple To-Do App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px; /* Restricts the container width for better focus */
+        }
+        .jumbotron {
+            margin-top: 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            width: auto; /* Makes button width only as wide as its content */
+        }
+        .show_more {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: block; /* Make the button take the full width */
+            width: 100%;
+            text-align: center;
+        }
+        #item_list {
+            margin-top: 20px;
+        }
+        .top-right-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1 class="display-4 text-center py-1">To-Do App</h1>
+    <div class="top-right-buttons">
+        <form action='/logout' method="POST" style="display: inline;">
+            <button class="btn btn-danger">Logout</button>
+        </form>
+        <form action='/logout_from_all_devices' method="POST" style="display: inline;">
+            <button class="btn btn-success">Logout from all devices</button>
+        </form>
+    </div>
 
-        <div class="jumbotron p-3 shadow-sm">
-            <!-- <form id="create_form" action='/create-item' method="POST"> -->
-                <div class="d-flex align-items-center">
-                    <input id="create_field" name='todo' autofocus autocomplete="off" class="form-control mr-3"
-                        type="text" style="flex: 1;">
-                    <button class="add_item btn btn-primary">Add New Item</button>
-                </div>
-            <!-- </form> -->
+    <div class="container">
+        <h1 class="display-4 text-center py-3">To-Do App</h1>
+
+        <div class="jumbotron p-4 shadow-sm">
+            <div class="d-flex align-items-center">
+                <input id="create_field" name='todo' autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
+                <button class="add_item btn btn-primary">Add New Item</button>
+            </div>
         </div>
 
-        <ul id="item_list" class="" list-group pb-5>
-        </ul>
+        <ul id="item_list" class="list-group pb-5"></ul>
 
-        <button class="show_more">
-            Show More
-        </button>
-
-
-        <form action='/logout' method="POST">
-            <button> Logout <button>
-        </form>
-
-        <form action='/logout_from_all_devices' method="POST">
-            <button> Logout from all devices <button>
-        </form>
-
+        <button class="show_more">Show More</button>
     </div>
 
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-    <script src="/browser.js"> </script>
+    <script src="/browser.js"></script>
 </body>
-
 </html>

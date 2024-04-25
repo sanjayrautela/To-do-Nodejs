@@ -10,7 +10,7 @@ const jwt = require("jsonwebtoken");
 const {
   userDataValidation,
   isEmailRgex,
-  genrateToken,
+  generateToken,
   sendVerificationMail,
 } = require("./utils/authUtils");
 const userModel = require("./models/userModel");
@@ -106,7 +106,7 @@ app.post("/register-user", async (req, res) => {
     const userDb = await userObj.save();
 
     //genrate token
-    const verifiedToken = genrateToken(email);
+    const verifiedToken = generateToken(email);
 
     //send mail with token
     sendVerificationMail(email, verifiedToken);
@@ -175,7 +175,7 @@ app.post("/login-user", async (req, res) => {
     req.session.user = {
       username: userDb.username,
       email: userDb.email,
-      userId: userDb._id, //BSON error userDb._id.toString()
+      userId: userDb._id, 
     };
 
     return res.redirect("/dashboard");
@@ -237,7 +237,7 @@ app.post("/logout_from_all_devices", isAuth, async (req, res) => {
 
     return res.send({
       status: 200,
-      message: "Logout from all devices successfull",
+      message: "Logout from all devices Successfull",
       data: deleteDb,
     });
   } catch (error) {
@@ -405,7 +405,6 @@ app.post("/edit-item", isAuth, async (req, res) => {
     });
   }
 
-  //edit the todo
 });
 
 app.delete("/delete-item", isAuth, async (req, res) => {
@@ -460,7 +459,7 @@ app.delete("/delete-item", isAuth, async (req, res) => {
     });
   }
 
-  //edit the todo
+
 });
 
 app.listen(PORT, () => {

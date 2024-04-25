@@ -1,70 +1,80 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Login Page </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
     <style>
-        Body {
-            font-family: Calibri, Helvetica, sans-serif;
-            background-color:lightslategray;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
         }
-
-        button {
-            background-color: green;
-            width: 100%;
-            color:white;
-            padding: 15px;
-            margin: 10px 0px;
-            border: none;
-            cursor: pointer;
-        }
-
         form {
-            border: 3px solid #f1f1f1;
+            width: 350px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
         }
-
-        input[type=text],
-        input[type=password] {
-            width: 100%;
-            margin: 8px 0;
-            padding: 12px 20px;
-            display: inline-block;
-            border: 2px solid green;
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            margin-top: 15px;
+            display: block;
+            color: #555;
+        }
+        input[type=text], input[type=password] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-top: 8px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            background: #f0f0f0;
+            transition: all 0.3s;
             box-sizing: border-box;
+            color: #333;
         }
-
+        input[type=text]:focus, input[type=password]:focus {
+            border-color: #007bff;
+            background-color: white;
+            outline: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
         button:hover {
-            opacity: 0.7;
-        }
-
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            margin: 10px 5px;
-        }
-
-
-        .container {
-            padding: 25px;
-            background-color: lightblue;
+            background-color: #0056b3;
         }
     </style>
 </head>
-
 <body>
-    <center>
-        <h1> Login Form </h1>
-    </center>
-    <form action='/login-user' method="POST">
+    <form action="/login-user" method="POST">
+        <h1>Login Form</h1>
         <div class="container">
-            <label for="loginId">Email or Username : </label>
+            <label for="loginId">Email or Username:</label>
             <input type="text" placeholder="Enter Email or Username" name="loginId" required>
-            <label for="password">Password : </label>
+            <label for="password">Password:</label>
             <input type="password" placeholder="Enter Password" name="password" required>
             <button type="submit">Login</button>
         </div>
     </form>
 </body>
-
 </html>

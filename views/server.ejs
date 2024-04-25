@@ -5,25 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1{
-            text-align: center;
+        body {
+            background-color: #000000; /* Add your desired background image URL here */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif; /* Using a more neutral, widely available font */
         }
-        button{
-            background-color: green;
-            color: white;
-            border-radius: 8px;
-            border: none;
-            padding: 8px 20px;
-            margin: auto;
+        h1 {
+            text-align: center;
+            color: white; /* Ensures text stands out against a potentially busy background */
+            text-shadow: 2px 2px 4px #000000; /* Adds a shadow to text for better readability */
+        }
+        form {
             display: flex;
             justify-content: center;
             margin-top: 20px;
-            
+        }
+        button {
+            background-color: #4CAF50; /* A more modern shade of green */
+            color: white;
+            border-radius: 8px;
+            border: none;
+            padding: 10px 25px; /* Slightly larger padding for a better touch interface */
+            cursor: pointer; /* Adds a pointer cursor on hover */
+            font-size: 16px; /* Larger font size for better readability */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for 3D effect */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+        }
+        button:hover {
+            background-color: #45a049; /* Slightly lighter green on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a lifting effect */
         }
     </style>
 </head>
 <body>
-    <h1>Server is Running</h1>
+    <h1>Manage Your Task With Ease!!</h1>
     <form action="/register" method="GET">
         <button type="submit">Register</button>   
     </form>
@@ -31,7 +47,5 @@
     <form action="/login" method="GET">
         <button type="submit">Login</button>   
     </form>
-
-    
 </body>
 </html>
