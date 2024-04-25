@@ -7,17 +7,13 @@ const mongodbSession = require("connect-mongodb-session")(session);
 const jwt = require("jsonwebtoken");
 
 //file-import
-const {
-  userDataValidation,
-  isEmailRgex,
-  generateToken,
-  sendVerificationMail,
-} = require("./utils/authUtils");
-const userModel = require("./models/userModel");
+const {userDataValidation,isEmailRgex,generateToken,sendVerificationMail,
+} = require("./utils/authUtils"); 
+const userModel = require("./models/usermodel");
 const { isAuth } = require("./middleware/isAuth");
 const { todoDataValidation } = require("./utils/todoUtils");
-const todoModel = require("./models/todoModel");
-const rateLimiting = require("./middleware/rateLimiting");
+const todoModel = require("./models/todomodel");
+const rateLimiting = require("./middleware/ratelimiting");
 
 //constants
 const app = express();
