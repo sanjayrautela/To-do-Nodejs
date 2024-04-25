@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  return res.render("registerPage");
+  return res.render("registerpage");
 });
 
 app.post("/register-user", async (req, res) => {
@@ -118,7 +118,7 @@ app.post("/register-user", async (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  return res.render("loginPage");
+  return res.render("loginpage");
 });
 
 app.post("/login-user", async (req, res) => {
